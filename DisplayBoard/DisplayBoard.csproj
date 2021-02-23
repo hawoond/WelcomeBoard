@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA2CA79C-96A0-443A-809F-D4D449F00DA6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DisplayBoard</RootNamespace>
+    <AssemblyName>DisplayBoard</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IMRUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\IMRUtils.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="View\CommonScreen.cs" />
+    <Compile Include="View\SubView\ucMenuListItem.xaml.cs">
+      <DependentUpon>ucMenuListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubView\ucBirthdayListItem.xaml.cs">
+      <DependentUpon>ucBirthdayListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubView\ucBookListItem.xaml.cs">
+      <DependentUpon>ucBookListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucBook.xaml.cs">
+      <DependentUpon>ucBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucCelebration.xaml.cs">
+      <DependentUpon>ucCelebration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucConversation.xaml.cs">
+      <DependentUpon>ucConversation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucFoodMenu.xaml.cs">
+      <DependentUpon>ucFoodMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucJob.xaml.cs">
+      <DependentUpon>ucJob.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucPromotionMovie.xaml.cs">
+      <DependentUpon>ucPromotionMovie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucSaftyInfo.xaml.cs">
+      <DependentUpon>ucSaftyInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucTeachersDay.xaml.cs">
+      <DependentUpon>ucTeachersDay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucWeather.xaml.cs">
+      <DependentUpon>ucWeather.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucWelcomeMessage.xaml.cs">
+      <DependentUpon>ucWelcomeMessage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ControlDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\SubView\ucMenuListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SubView\ucBirthdayListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SubView\ucBookListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ucBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucCelebration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucConversation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucFoodMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucJob.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucPromotionMovie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucSaftyInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucTeachersDay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucWeather.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucWelcomeMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\UdtBook.cs" />
+    <Compile Include="Model\UdtCelebration.cs" />
+    <Compile Include="Model\UdtConfig.cs" />
+    <Compile Include="Model\UdtConversation.cs" />
+    <Compile Include="Model\UdtDisplayTime.cs" />
+    <Compile Include="Model\UdtFoodMenu.cs" />
+    <Compile Include="Model\UdtJob.cs" />
+    <Compile Include="Model\UdtPromotionMovie.cs" />
+    <Compile Include="Model\UdtSaftyInfo.cs" />
+    <Compile Include="Model\UdtStudentInfo.cs" />
+    <Compile Include="Model\UdtTeachersDay.cs" />
+    <Compile Include="Model\UdtWeather.cs" />
+    <Compile Include="Model\UdtWelcomeMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\NanumBarunGothic.ttf" />
+    <Resource Include="Resources\NanumBarunGothicBold.ttf" />
+    <Resource Include="Resources\NanumBarunGothicLight.ttf" />
+    <Resource Include="Resources\NanumBarunGothicUltraLight.ttf" />
+    <Resource Include="Resources\NanumPen.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\imagesource_book_background.png" />
+    <Resource Include="Resources\imagesource_book_bookcrown.png" />
+    <Resource Include="Resources\imagesource_book_contents.png" />
+    <Resource Include="Resources\imagesource_book_line.png" />
+    <Resource Include="Resources\BMYEONSUNG_TTF.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\BMJUA_ttf.ttf" />
+    <Resource Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\IMRUtils.dll" />
+    <Resource Include="Resources\weather_imagesource_bg4.png" />
+    <Resource Include="Resources\weather_imagesource_dusticon3.png" />
+    <Resource Include="Resources\weather_imagesource_dusticon2.png" />
+    <Resource Include="Resources\weather_imagesource_dusticon1.png" />
+    <Resource Include="Resources\weather_imagesource_dusticon4.png" />
+    <Resource Include="Resources\weather_imagesource_icon6.png" />
+    <Resource Include="Resources\weather_imagesource_icon5.png" />
+    <Resource Include="Resources\weather_imagesource_icon4.png" />
+    <Resource Include="Resources\weather_imagesource_icon3.png" />
+    <Resource Include="Resources\weather_imagesource_icon2.png" />
+    <Resource Include="Resources\weather_imagesource_icon1.png" />
+    <Resource Include="Resources\weather_imagesource_icon11.png" />
+    <Resource Include="Resources\weather_imagesource_icon10.png" />
+    <Resource Include="Resources\weather_imagesource_icon9.png" />
+    <Resource Include="Resources\weather_imagesource_icon8.png" />
+    <Resource Include="Resources\weather_imagesource_icon7.png" />
+    <Resource Include="Resources\safety_imagesource_bg2.png" />
+    <Resource Include="Resources\welcome_imagesource_bg2.png" />
+    <Resource Include="Resources\english_imagesource_bg2.png" />
+    <Resource Include="Resources\english_imagesource_question.png" />
+    <Resource Include="Resources\english_imagesource_englishconversation.png" />
+    <Resource Include="Resources\english_imagesource_today.png" />
+    <Resource Include="Resources\english_imagesource_bg.png" />
+    <Resource Include="Resources\menu_imagesource_itemized.png" />
+    <Resource Include="Resources\menu_imagesource_bg.png" />
+    <Resource Include="Resources\job_imagesource_imagepreparing.png" />
+    <Resource Include="Resources\job_imagesource_bg.png" />
+    <Resource Include="Resources\graduation_imagesource_ribbon.png" />
+    <Resource Include="Resources\graduation_imagesource_bg.png" />
+    <Resource Include="Resources\weather_imagesource_bg_gray.png" />
+    <Resource Include="Resources\weather_imagesource_bg3.png" />
+    <Resource Include="Resources\NANUMGOTHIC.TTF" />
+    <Resource Include="Resources\NANUMGOTHICBOLD.TTF" />
+    <Resource Include="Resources\NANUMGOTHICEXTRABOLD.TTF" />
+    <Resource Include="Resources\weather_imagesource_bg.png" />
+    <Resource Include="Resources\weather_imagesource_bg_dustbox2.png" />
+    <Resource Include="Resources\weather_imagesource_bg_dustbox.png" />
+    <Resource Include="Resources\weather_imagesource_bg_box2.png" />
+    <Resource Include="Resources\weather_imagesource_bg_box.png" />
+    <Resource Include="Resources\weather_finalimage.png" />
+    <Resource Include="Resources\teacherday_imagesource_bg.png" />
+    <Resource Include="Resources\imagesource_book_shelf.png" />
+    <Resource Include="Resources\birthday_imagesource_bg.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

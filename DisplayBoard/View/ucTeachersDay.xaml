@@ -1,0 +1,20 @@
+﻿<local:CommonScreen x:Class="DisplayBoard.View.ucTeachersDay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DisplayBoard.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <local:CommonScreen.Background>
+        <ImageBrush ImageSource="/DisplayBoard;component/Resources/teacherday_imagesource_bg.png" Stretch="UniformToFill"/>
+    </local:CommonScreen.Background>
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding Message}" HorizontalAlignment="Center" 
+                       FontSize="80" Margin="0,0,0,103" Padding="0" FontFamily="/DisplayBoard;component/Resources/#Nanum Pen Script"
+                       Foreground="#f54b7f" LineHeight="1"
+                       LineStackingStrategy="BlockLineHeight" />
+        </StackPanel>
+    </Grid>
+</local:CommonScreen>

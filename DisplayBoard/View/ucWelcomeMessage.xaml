@@ -1,0 +1,28 @@
+﻿<local:CommonScreen x:Class="DisplayBoard.View.ucWelcomeMessage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DisplayBoard.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DisplayBoard;component/ControlDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <local:CommonScreen.Background>
+        <ImageBrush ImageSource="/resources/welcome_imagesource_bg2.png" Stretch="UniformToFill"/>
+    </local:CommonScreen.Background>
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Label Content="{Binding Message}" HorizontalAlignment="Center" FontSize="139" Margin="0,584,0,0" 
+                   FontFamily="/DisplayBoard;component/Resources/#Nanum Pen Script"
+                   />
+            <Label x:Name="lbSchoolNM" HorizontalAlignment="Center" FontSize="60" Margin="0,145,0,0" 
+                   FontFamily="/DisplayBoard;component/Resources/#Nanum Pen Script" Foreground="#3B78C2"/>
+        </StackPanel>
+    </Grid>
+</local:CommonScreen>

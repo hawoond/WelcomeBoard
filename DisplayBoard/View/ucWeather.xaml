@@ -1,0 +1,150 @@
+﻿<local:CommonScreen x:Class="DisplayBoard.View.ucWeather"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DisplayBoard.View"
+             xmlns:prop="clr-namespace:DisplayBoard.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DisplayBoard;component/ControlDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <local:CommonScreen.Background>
+        <ImageBrush ImageSource="/resources/weather_imagesource_bg3.png" Stretch="UniformToFill"/>
+    </local:CommonScreen.Background>
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="1920" Height="1080">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="832" Height="964"
+                  Margin="90,0,0,0"
+                  Panel.ZIndex="999">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/resources/weather_imagesource_bg4.png" Stretch="UniformToFill"/>
+                </Grid.Background>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="150,298,0,0">
+                    <Image Source="{Binding WeatherState}" Width="475" Height="339"
+                           x:Name="imgWeather"/>
+                    <Label Content="맑음" HorizontalAlignment="Center" FontFamily="/DisplayBoard;component/Resources/#BM JUA_TTF"
+                           Foreground="White" FontSize="80" Margin="0,95,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="오늘보다" HorizontalAlignment="Center" FontFamily="/DisplayBoard;component/Resources/#BM JUA_TTF"
+                               Foreground="White" FontSize="64"/>
+                        <Label Content="{Binding WeatherDesc_temp}" HorizontalAlignment="Center" FontFamily="/DisplayBoard;component/Resources/#BM JUA_TTF"
+                               Foreground="White" FontSize="64"/>
+                        <Label Content="℃ " HorizontalAlignment="Center" FontFamily="/DisplayBoard;component/Resources/#NanumGothic"
+                               Foreground="White" FontSize="64" FontWeight="ExtraBold" Padding="0"/>
+                        <Label Content="{Binding WeatherDesc_state}" HorizontalAlignment="Center" FontFamily="/DisplayBoard;component/Resources/#BM JUA_TTF"
+                               Foreground="White" FontSize="64"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <StackPanel Orientation="Vertical" Width="1020" Height="1080">
+                <StackPanel Orientation="Vertical" Width="965" Height="885"
+                            Margin="-170,95,0,0"
+                            Panel.ZIndex="-999">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/resources/weather_imagesource_bg_gray.png" Stretch="UniformToFill"/>
+                    </StackPanel.Background>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,78,0,0">
+                        <Border Width="304" Height="214" BorderBrush="Black" BorderThickness="0">
+                            <StackPanel Orientation="Vertical" >
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="/Resources/weather_imagesource_bg_box2.png"/>
+                                </StackPanel.Background>
+                                <Label Content="강수확률" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0"
+                                   FontSize="39" FontFamily="/DisplayBoard;component/Resources/#NanumGothic" FontWeight="Bold" 
+                                   Foreground="#317579"/>
+                                <Label Content="{Binding Pop}" Background="Transparent" HorizontalAlignment="Stretch" 
+                                   HorizontalContentAlignment="Center" Margin="5,35,5,5" FontSize="47" 
+                                   FontFamily="/DisplayBoard;component/Resources/#NanumGothic"
+                                   Foreground="#317579"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Width="304" Height="214" BorderBrush="Black" BorderThickness="0">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="/Resources/weather_imagesource_bg_box2.png"/>
+                                </StackPanel.Background>
+                                <Label Content="기온" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0"
+                                   FontSize="39" FontFamily="/DisplayBoard;component/Resources/#NanumGothic" FontWeight="Bold" 
+                                   Foreground="#317579"/>
+                                <Label Content="{Binding Temperature}" Background="Transparent" HorizontalAlignment="Stretch" 
+                                   HorizontalContentAlignment="Center" Margin="5,35,5,5" FontSize="47" 
+                                   FontFamily="/DisplayBoard;component/Resources/#NanumGothic"
+                                   Foreground="#317579"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Width="304" Height="214" BorderBrush="Black" BorderThickness="0">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="/Resources/weather_imagesource_bg_box2.png"/>
+                                </StackPanel.Background>
+                                <Label Content="체감온도" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0"
+                                   FontSize="39" FontFamily="/DisplayBoard;component/Resources/#NanumGothic" FontWeight="Bold" 
+                                   Foreground="#317579"/>
+                                <Label Content="{Binding SensibleTemp}" Background="Transparent" HorizontalAlignment="Stretch" 
+                                   HorizontalContentAlignment="Center" Margin="5,35,5,5" FontSize="47" 
+                                   FontFamily="/DisplayBoard;component/Resources/#NanumGothic"
+                                   Foreground="#317579"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="40,80,57,0">
+                        <StackPanel.Background>
+                            <ImageBrush ImageSource="/Resources/weather_imagesource_bg_dustbox2.png"/>
+                        </StackPanel.Background>
+                        <Border Width="839" Height="436" BorderBrush="Black" BorderThickness="0" Padding="10">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical" Width="418" Height="436" VerticalAlignment="Center">
+                                    <Label Content="미세먼지" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,49,0,0"
+                                   FontSize="39" FontFamily="/DisplayBoard;component/Resources/#NanumGothic" FontWeight="Bold" 
+                                   Foreground="#317579"/>
+                                    <Image Source="{Binding FineDust_icon}" Width="182" Height="182" Margin="0,47,0,26"
+                                           x:Name="imgFineDust"/>
+                                    <Label Content="{Binding FineDust}" HorizontalAlignment="Stretch" FontFamily="/DisplayBoard;component/Resources/#NanumGothic" 
+                                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                       FontSize="47" Foreground="#317579" Margin="5"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Width="418" Height="436"  VerticalAlignment="Center">
+                                    <Label Content="초미세먼지" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,49,0,0"
+                                   FontSize="39" FontFamily="/DisplayBoard;component/Resources/#NanumGothic" FontWeight="Bold" 
+                                   Foreground="#317579"/>
+                                    <Image Source="{Binding UltrafineParticle_icon}" Width="182" Height="182" Margin="0,47,0,26"
+                                           x:Name="imgUltraFinePraticle"/>
+                                    <Label Content="{Binding UltrafineParticle}" HorizontalAlignment="Stretch" FontFamily="/DisplayBoard;component/Resources/#NanumGothic" 
+                                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                       FontSize="47" Foreground="#317579" Margin="5"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel.RenderTransform>
+                        <TranslateTransform x:Name="ttMarquee"/>
+                    </StackPanel.RenderTransform>
+                    <StackPanel.Triggers>
+                        <EventTrigger RoutedEvent="StackPanel.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="-770" 
+                                                     To="-770" 
+                                                     Storyboard.TargetName="ttMarquee"
+                                                     Storyboard.TargetProperty="X"
+                                                     BeginTime="0:0:0" Duration="0:0:2" />
+                                    <DoubleAnimation From="-770" 
+                                                     To="0" 
+                                                     Storyboard.TargetName="ttMarquee"
+                                                     Storyboard.TargetProperty="X"
+                                                     BeginTime="0:0:2" Duration="0:0:1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </StackPanel.Triggers>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</local:CommonScreen>

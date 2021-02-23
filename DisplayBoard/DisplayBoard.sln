@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayBoard", "DisplayBoard.csproj", "{FA2CA79C-96A0-443A-809F-D4D449F00DA6}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WBASetup", "..\WBASetup\WBASetup.vdproj", "{112A8827-410B-4FB1-98C6-E46218C3861E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA2CA79C-96A0-443A-809F-D4D449F00DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA2CA79C-96A0-443A-809F-D4D449F00DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA2CA79C-96A0-443A-809F-D4D449F00DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA2CA79C-96A0-443A-809F-D4D449F00DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{112A8827-410B-4FB1-98C6-E46218C3861E}.Debug|Any CPU.ActiveCfg = Debug
+		{112A8827-410B-4FB1-98C6-E46218C3861E}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31AA1EEF-C78C-49B0-9DE1-CA3EB81948F3}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/imrsol
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DisplayBoard.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\WBASetup\\WBASetup.vdproj
+		SccProjectName2 = ../WBASetup
+		SccLocalPath2 = ..\\WBASetup
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+﻿<local:CommonScreen x:Class="DisplayBoard.View.SubView.ucBirthdayListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DisplayBoard.View"
+             xmlns:prop="clr-namespace:DisplayBoard.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="63" d:DesignWidth="320">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DisplayBoard;component/ControlDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="{Binding Grade}" Padding="0" Style="{StaticResource BirthdayLabel}" />
+            <Label Content="학년 " Padding="0" Style="{StaticResource BirthdayLabel}"/>
+            <Label Content="{Binding Class}" Padding="0" Style="{StaticResource BirthdayLabel}"/>
+            <Label Content="반 " Padding="0" Style="{StaticResource BirthdayLabel}"/>
+            <Label Content="{Binding Name}" Padding="0" Style="{StaticResource BirthdayLabel}"/>
+        </StackPanel>
+    </Grid>
+</local:CommonScreen>

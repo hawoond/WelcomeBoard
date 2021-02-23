@@ -1,0 +1,34 @@
+﻿<local:CommonScreen x:Class="DisplayBoard.View.ucFoodMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DisplayBoard.View"
+             mc:Ignorable="d" 
+             xmlns:subview="clr-namespace:DisplayBoard.View.SubView"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DisplayBoard;component/ControlDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <local:CommonScreen.Background>
+        <ImageBrush ImageSource="/resources/menu_imagesource_bg.png" Stretch="UniformToFill"/>
+    </local:CommonScreen.Background>
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
+            <Label x:Name="lbTitle" Content="점심 식사" HorizontalAlignment="Stretch" FontSize="71" 
+                   HorizontalContentAlignment="Center" Margin="0,331,0,0" 
+                   FontFamily="/DisplayBoard;component/Resources/#BM YEONSUNG"
+                   Padding="0"/>
+            <TextBlock Text="{Binding MenuDesc}"
+                       Padding="0" 
+                       TextWrapping="Wrap" 
+                       FontFamily="NanumGothic" 
+                       FontSize="43" 
+                       Margin="479,70,479,0"/>
+        </StackPanel>
+    </Grid>
+</local:CommonScreen>

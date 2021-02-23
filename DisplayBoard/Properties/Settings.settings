@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DisplayBoard.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PATH_JSON" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\jireh\DisplaySharedData\JSON\</Value>
+    </Setting>
+    <Setting Name="PATH_IMAGE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\jireh\DisplaySharedData\IMAGE\</Value>
+    </Setting>
+    <Setting Name="PATH_LOG" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\jireh\DisplaySharedData\LOG\</Value>
+    </Setting>
+    <Setting Name="PATH_ROOT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\jireh\DisplaySharedData\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

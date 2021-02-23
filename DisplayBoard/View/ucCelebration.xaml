@@ -1,0 +1,96 @@
+﻿<local:CommonScreen x:Class="DisplayBoard.View.ucCelebration"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DisplayBoard.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             xmlns:subview="clr-namespace:DisplayBoard.View.SubView">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DisplayBoard;component/ControlDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <!--입학(졸업)축하 메시지-->
+        <Grid Visibility="Visible"
+              x:Name="gridGraduation">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/graduation_imagesource_bg.png" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Width="1764" Height="192"
+                    Margin="-2,561,0,0">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/Resources/graduation_imagesource_ribbon.png" Stretch="UniformToFill"/>
+                </StackPanel.Background>
+                <Label FontSize="139"
+                       HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="0"
+                       VerticalContentAlignment="Center" VerticalAlignment="Center"
+                       Foreground="#40210F"
+                       x:Name="lbMessage"
+                       FontFamily="/DisplayBoard;component/Resources/#Nanum Pen Script">
+                    <Label.Content>
+                        <AccessText TextWrapping="Wrap" Text="입학을 축하합니다!" TextAlignment="Center" />
+                    </Label.Content>
+                </Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="2019" FontSize="60" HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Foreground="#C6986B"
+                       x:Name="lbYear"
+                   Padding="0"
+                   Margin="0,0,0,100" FontFamily="/DisplayBoard;component/Resources/#Nanum Pen Script"/>
+                <Label Content="학년도 " FontSize="60" HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Foreground="#C6986B"
+                   Padding="0"
+                   Margin="0,0,0,100" FontFamily="/DisplayBoard;component/Resources/#Nanum Pen Script"/>
+                <Label Content="대평고등학교" FontSize="60" HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Foreground="#C6986B"
+                   Padding="0"
+                       x:Name="lbSchoolNM"
+                   Margin="0,0,0,100" FontFamily="/DisplayBoard;component/Resources/#Nanum Pen Script"/>
+            </StackPanel>
+        </Grid>
+        <!--생일 축하 메시지-->
+        <Grid Visibility="Collapsed"
+              x:Name="gridBirthday">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/birthday_imagesource_bg.png" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <ScrollViewer VerticalAlignment="Bottom"
+                      Height="458"
+                      Margin="250,136" 
+                      Width="1420"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <ListBox Background="Transparent"
+                     x:Name="lbBirthday"
+                     VerticalAlignment="Top"
+                     BorderBrush="Transparent"
+                     ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     BorderThickness="0"
+                     HorizontalAlignment="Left"
+                     Padding="120,67,28,67"
+                     ItemContainerStyle="{StaticResource BirthdayListboxItem}">
+                    <!--ItemsSource="{Binding BindingData.MomModelCollection, UpdateSourceTrigger=PropertyChanged}" Margin="0,15,10,0">-->
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type subview:ucBirthdayListItem}">
+                            <subview:ucBirthdayListItem DataContext="{Binding}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</local:CommonScreen>

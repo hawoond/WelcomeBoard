@@ -1,0 +1,31 @@
+﻿<local:CommonScreen x:Class="DisplayBoard.View.ucSaftyInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DisplayBoard.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DisplayBoard;component/ControlDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <local:CommonScreen.Background>
+        <ImageBrush ImageSource="/resources/safety_imagesource_bg2.png" Stretch="UniformToFill"/>
+    </local:CommonScreen.Background>
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Label Content="{Binding SaftyTitle}" HorizontalAlignment="Center" FontSize="80" FontFamily="/DisplayBoard;component/Resources/#BM YEONSUNG"
+                   Margin="0,305,0,189"/>
+            <Label HorizontalAlignment="Stretch" Margin="252,0,252,0" Height="325" FontFamily="/DisplayBoard;component/Resources/#NanumGothic">
+                <Label.Content>
+                    <AccessText TextWrapping="Wrap" Text="{Binding SaftyDesc}"
+                                FontFamily="NanumGothic" FontSize="42"/>
+                </Label.Content>
+            </Label>
+        </StackPanel>
+    </Grid>
+</local:CommonScreen>

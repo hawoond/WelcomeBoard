@@ -1,0 +1,49 @@
+﻿<local:CommonScreen x:Class="DisplayBoard.View.ucJob"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DisplayBoard.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DisplayBoard;component/ControlDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <local:CommonScreen.Background>
+        <ImageBrush ImageSource="/resources/job_imagesource_bg.png" Stretch="UniformToFill"/>
+    </local:CommonScreen.Background>
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="77,205,77,97">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding JobTitle}"
+                               HorizontalAlignment="Center"
+                               LineHeight="1"
+                               LineStackingStrategy="BlockLineHeight"
+                               Height="77"
+                               Margin="-65,129,0,0" FontSize="80"
+                               Padding="0" FontFamily="/DisplayBoard;component/Resources/#BM YEONSUNG"/>
+                    <Image Source="{Binding JobImage}" Width="492" Height="491" Stretch="Fill"
+                           Margin="33,64,102,67" x:Name="imgJob"/>
+                </StackPanel>
+                <Label Height="503"
+                       Width="1139"
+                       Margin="0,0,0,30"
+                       Padding="96,168,96,76"
+                       FontSize="24"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom" 
+                       VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontFamily="/DisplayBoard;component/Resources/#NanumGothic">
+                    <Label.Content>
+                        <AccessText TextWrapping="Wrap" Text="{Binding JobInfo}"
+                                FontFamily="NanumGothic" Margin="0"/>
+                    </Label.Content>
+                </Label>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</local:CommonScreen>
